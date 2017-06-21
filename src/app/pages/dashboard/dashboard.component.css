@@ -1,0 +1,30 @@
+header div nav a.mdl-navigation__link:hover{
+    background-color: #5196AF;
+}
+
+header.mdl-layout__header{
+    background-color: #104D63;
+    color: white;
+}
+
+div.mdl-layout__drawer-button{
+    color: white;
+}
+
+a.mdl-navigation__link{
+    color: white;
+}
+
+div.mdl-layout__drawer{
+    background-color: #00AC7D;
+    color: white;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link{
+    color: #EEEEEE;
+    border-top: 1px solid white;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover{
+    background-color: #38BA96;
+}

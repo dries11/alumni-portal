@@ -1,0 +1,24 @@
+div.mdl-button.mdl-button--colored{
+    color: black;
+}
+
+div.mdl-textfield{
+    display: block;
+    margin: auto;
+}
+
+input.mdl-textfield__input{
+    text-align: center;
+}
+
+label.mdl-textfield__label{
+    text-align: center;
+}
+
+div.mdl-card__actions {
+    padding-bottom: 10%;
+}
+
+#form{
+    padding-bottom: 7%
+}

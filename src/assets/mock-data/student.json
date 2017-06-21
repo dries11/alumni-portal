@@ -1,0 +1,13 @@
+{
+    "id" : 1,
+    "username" : "dries",
+    "firstname" : "Dan",
+    "lastname" : "Ries",
+    "email": "dobetter@zipcodewilmington.com",
+    "address" : {
+    "street" : "42 Wallaby Way",
+    "city" : "Sidney",
+    "state" : "New South Wales",
+    "country" : "Austrailia"
+    }
+}

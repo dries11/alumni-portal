@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__media">
+            <img class="zcw_image" src="./assets/img/ZCW_logo_600px.png" width="196px" height="86px" border="0" alt="Zip Code Wilmington Logo">
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <div *ngIf="!forgotPassword">
+                <app-normal-login></app-normal-login>
+            </div>
+            <div *ngIf="forgotPassword">
+                <app-forgot-password></app-forgot-password>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                Login 
+                <i class="material-icons">exit_to_app</i>
+            </div>
+            <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="forgotPasswordBtnClicked()">
+                Forgot Password
+                <i class="material-icons">enhanced_encryption</i>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">ZCW Alumni Portal</span>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="dashboard/update-profile/1">Update Profile Data</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Links</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="dashboard/update-profile/1">Update Profile Data</a>
+      <a class="mdl-navigation__link" href="http://zipcodewilmington.com" target="_blank">ZCW Website</a>
+      <a class="mdl-navigation__link" href="https://www.meetup.com/Zip-Code-Wilmington/" target="_blank">ZCW Meetup</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
