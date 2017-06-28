@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
+declare var componentHandler;
 
 @Component({
     selector: 'app-normal-login',
@@ -6,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./normal-login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
 
-    constructor() { }
+    loginForm: FormGroup;
 
-    ngOnInit() { }
+    submitAttempt: boolean = false;
+
+    constructor(private route: Router, private formBuilder: FormBuilder) { }
+
+    ngAfterViewInit() {
+        componentHandler.upgradeAllRegistered();
+    }
+
+    ngOnInit() {
+
+    }
+
+    forgotPasswordBtnClicked() {
+        this.route.navigate(['login/forgot-password']);
+    }
+
+    loginClicked() {}
 }

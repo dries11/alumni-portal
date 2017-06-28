@@ -1,10 +1,20 @@
-<form id="form" action="#">
+<form id="form" [formGroup]="loginForm">
     <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" id="usernameInput">
+        <input class="mdl-textfield__input" type="text" id="usernameInput" formControlName="email">
         <label class="mdl-textfield__label" for="usernameInput">Email...</label>
     </div>
     <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="password" id="usernameInput">
+        <input class="mdl-textfield__input" type="password" id="usernameInput" formControlName="password">
         <label class="mdl-textfield__label" for="usernameInput">Password...</label>
     </div>
 </form>
+<div class="mdl-card__actions mdl-card--border">
+    <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Login 
+        <i class="material-icons">exit_to_app</i>
+    </div>
+    <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="forgotPasswordBtnClicked()">
+        Forgot Password
+        <i class="material-icons">enhanced_encryption</i>
+    </div>
+</div>

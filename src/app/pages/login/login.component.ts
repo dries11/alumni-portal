@@ -1,4 +1,5 @@
-import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginComponent } from './normal/normal-login.component';
 import { ForgotPasswordComponent } from './forgotpassword/forgot-password.component';
 
@@ -12,11 +13,7 @@ export class LoginPage implements OnInit {
 
     forgotPassword: boolean = false;
 
-    constructor() { }
+    constructor(private route: Router) { }
 
     ngOnInit() { }
-
-    forgotPasswordBtnClicked() {
-        this.forgotPassword = !this.forgotPassword;
-    }
 }

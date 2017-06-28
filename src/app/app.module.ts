@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RoutingModule } from './app-routing.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginPage } from './pages/login/login.component';
@@ -31,7 +32,8 @@ import { firebaseConfig  } from '../assets/config';
     FormsModule,
     HttpModule,
     RoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    ReactiveFormsModule
   ],
   providers: [StudentService, AuthService, AngularFireAuth],
   bootstrap: [AppComponent]
