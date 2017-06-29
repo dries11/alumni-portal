@@ -1,4 +1,4 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<div mdl class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <span class="mdl-layout-title">ZCW Alumni Portal</span>
@@ -10,10 +10,11 @@
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Links</span>
-    <nav class="mdl-navigation">
+    <nav class="mdl-navigation mdl-layout-spacer" style="flex-grow: 1;">
       <a class="mdl-navigation__link" href="dashboard/update-profile/1">Update Profile Data</a>
       <a class="mdl-navigation__link" href="http://zipcodewilmington.com" target="_blank">ZCW Website</a>
       <a class="mdl-navigation__link" href="https://www.meetup.com/Zip-Code-Wilmington/" target="_blank">ZCW Meetup</a>
+      <button id="logoutBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="logoutBtnClicked()">Logout</button>
     </nav>
   </div>
   <main class="mdl-layout__content">

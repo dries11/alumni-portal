@@ -28,3 +28,7 @@ div.mdl-layout__drawer{
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover{
     background-color: #38BA96;
 }
+
+#logoutBtn{
+    background-color: #F5C338;
+}

@@ -20,3 +20,7 @@ div.mdl-card__actions {
 #form{
     padding-bottom: 7%
 }
+
+div p.invalid-email{
+    color: #7F3026;
+}

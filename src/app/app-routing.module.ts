@@ -13,7 +13,7 @@ const routes: Routes = [
         {path: '', component: LoginComponent},
         {path: 'forgot-password', component: ForgotPasswordComponent}
     ]},
-    {path: 'dashboard', component: DashboardPage, canActivate: [AuthService], children: [
+    {path: 'dashboard', component: DashboardPage, children: [
         {path: 'update-profile/:id', component: ProfileComponent}
     ]}
 ];

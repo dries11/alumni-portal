@@ -9,8 +9,8 @@ export class AuthService implements CanActivate{
 
     user: Observable<firebase.User>;
 
-    constructor(private afAuth: AngularFireAuth, private router: Router) {
-        this.user = afAuth.authState;
+    constructor(public afAuth: AngularFireAuth, private router: Router) {
+        this.user = this.afAuth.authState;
     }
 
     login(email: string, password: string): firebase.Promise<any> {
@@ -36,6 +36,7 @@ export class AuthService implements CanActivate{
         const isAuth = this.isAuthenticated();
         if(!isAuth){
             this.router.navigate(['login']);
+            console.log(this.user);
             console.log("Login Page Set");
         }
         this.user.map(user => { console.log(user.uid)});

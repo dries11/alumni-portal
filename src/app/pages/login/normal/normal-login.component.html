@@ -1,15 +1,20 @@
-<form id="form" [formGroup]="loginForm">
+<form mdl id="form" [formGroup]="loginForm">
     <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" id="usernameInput" formControlName="email">
+        <input class="mdl-textfield__input" type="text" id="emailInput" formControlName="email">
         <label class="mdl-textfield__label" for="usernameInput">Email...</label>
     </div>
+    <div *ngIf="invalid">
+        <p class="invalid-email">
+            Invalid Email Entered
+        </p>
+    </div>
     <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="password" id="usernameInput" formControlName="password">
+        <input class="mdl-textfield__input" type="password" id="passwordInput" formControlName="password">
         <label class="mdl-textfield__label" for="usernameInput">Password...</label>
     </div>
 </form>
 <div class="mdl-card__actions mdl-card--border">
-    <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+    <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="loginClicked()">
         Login 
         <i class="material-icons">exit_to_app</i>
     </div>

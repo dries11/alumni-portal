@@ -7,6 +7,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { MDLDirective } from './mdl-upgrade-element';
+
 import { AppComponent } from './app.component';
 import { LoginPage } from './pages/login/login.component';
 import { DashboardPage } from './pages/dashboard/dashboard.component';
@@ -25,7 +27,8 @@ import { firebaseConfig  } from '../assets/config';
     DashboardPage,
     ProfileComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    MDLDirective
   ],
   imports: [
     BrowserModule,
