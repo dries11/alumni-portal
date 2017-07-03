@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NewUserComponent } from '../../components/newuser/newuser.component';
 
 @Component({
     selector: 'app-dashboard',
@@ -10,12 +11,19 @@ import { Router } from '@angular/router';
 
 export class DashboardPage implements OnInit {
 
+    private isAdmin;
+    private uid: string;
+    private sub: any;
+
     constructor(private auth: AuthService, private router: Router) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.uid = this.auth.getCurrentUserId();
+    }
 
     logoutBtnClicked() {
-        this.auth.logoutUser();
-        this.router.navigate(['']);
+        this.auth.logoutUser().then(() => {
+            this.router.navigate(['']);
+        });
     }
 }

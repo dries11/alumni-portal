@@ -10,7 +10,7 @@
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Links</span>
-    <nav class="mdl-navigation mdl-layout-spacer" style="flex-grow: 1;">
+    <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="dashboard/update-profile/1">Update Profile Data</a>
       <a class="mdl-navigation__link" href="http://zipcodewilmington.com" target="_blank">ZCW Website</a>
       <a class="mdl-navigation__link" href="https://www.meetup.com/Zip-Code-Wilmington/" target="_blank">ZCW Meetup</a>
@@ -19,7 +19,10 @@
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
-      <router-outlet></router-outlet>
+      <div class="mdl-grid">
+        <new-user class="mdl-shadow--4dp"></new-user>
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </main>
 </div>

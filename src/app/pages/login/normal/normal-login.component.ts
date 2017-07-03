@@ -50,12 +50,14 @@ export class LoginComponent implements OnInit {
 
     loginClicked() {
         if (this.loginForm.valid) {
+            console.log(this.loginForm);
             this.invalid = false;
-            this.auth.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value)
+            this.auth.login(this.loginForm.value.email, this.loginForm.value.password)
             .then(data => {
-                console.log(data);
+                if (data != null) {
+                    this.route.navigate(['dashboard']);
+                }
             });
-
         } else {
             this.invalid = true;
         }

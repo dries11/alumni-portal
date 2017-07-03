@@ -1,25 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
 import { CanActivate, Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Injectable()
-export class AuthService implements CanActivate{
+export class AuthService {
 
-    user: Observable<firebase.User>;
+    private isLoggedIn: boolean;
 
-    constructor(public afAuth: AngularFireAuth, private router: Router) {
-        this.user = this.afAuth.authState;
+    constructor(private afAuth: AngularFireAuth, private afDB: AngularFireDatabase, private router: Router) {
     }
 
     login(email: string, password: string): firebase.Promise<any> {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password);
     }
 
-    signUpUser(email: string, password: string): boolean {
+    signUpUser(userObj: User, email: string, password: string): boolean {
         this.afAuth.auth.createUserWithEmailAndPassword(email, password).catch(error => {
             return false;
+        }).then( data => {
+            const userRef = this.afDB.database.ref('/users/' + data.uid);
+            userRef.set(userObj);
         });
         return true;
     }
@@ -32,25 +36,7 @@ export class AuthService implements CanActivate{
         return this.afAuth.auth.signOut();
     }
 
-    canActivate(): boolean {
-        const isAuth = this.isAuthenticated();
-        if(!isAuth){
-            this.router.navigate(['login']);
-            console.log(this.user);
-            console.log("Login Page Set");
-        }
-        this.user.map(user => { console.log(user.uid)});
-        return isAuth;
+    getCurrentUserId(): string {
+        return this.afAuth.auth.currentUser.uid;
     }
-
-    isAuthenticated(): boolean{
-        var uid;
-        this.user.map(user => { uid = user.uid});
-        if (uid != null){
-            return true;
-        }else {
-            return false;
-        }
-    }
-
 }

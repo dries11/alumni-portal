@@ -1,0 +1,16 @@
+div.mdl-card{
+    width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+div.mdl-card__title{
+    background-color: #F5C338;
+}
+
+.mdl-card__title{
+    font-weight: bold;
+}

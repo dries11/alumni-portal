@@ -1,0 +1,90 @@
+<div mdl class="mdl-card">
+    <div class="mdl-card__title">
+        <span class="mdl-card__title-text">
+            Create A New User
+        </span>
+    </div>
+    <div mdl class="mdl-card__supporting-text">
+        <form id="form">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="firstName" [(ngModel)]="firstName">
+                <label class="mdl-textfield__label" for="firstNameInput">First Name...</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="lastName" [(ngModel)]="lastName">
+                <label class="mdl-textfield__label" for="lastNameInput">Last Name...</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="tel" name="phoneNumber" [textMask]="{mask: masks.phoneNumber}" [(ngModel)]="phoneNumber">
+                <label class="mdl-textfield__label" for="phoneNumberInput">Phone Number</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="email" name="email" [(ngModel)]="email">
+                <label class="mdl-textfield__label" for="emailInput">Email</label>
+            </div>
+            <div>
+                <label for="adminSwitch" class="mdl-switch mdl-js-switch">
+                    <input type="checkbox" id="adminSwitch" class="mdl-switch__input">
+                    <span class="mdl-switch__label">Admin Yes/No</span>
+                </label>
+            </div>
+            <div class="mdl-card__title">
+                <span class="mdl-card__subtitle-text">
+                    Current Job
+                </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="currentCompany" [(ngModel)]="company">
+                <label class="mdl-textfield__label" for="companyInput">Company</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="currentRole" [(ngModel)]="role">
+                <label class="mdl-textfield__label" for="roleInput">Role</label>
+            </div>
+            <div class="mdl-card__title">
+                <span class="mdl-card__subtitle-text">
+                    Current Address
+                </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="city" [(ngModel)]="city">
+                <label class="mdl-textfield__label" for="cityInput">City</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="country" [(ngModel)]="country">
+                <label class="mdl-textfield__label" for="countryInput">Country</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="state" [(ngModel)]="state">
+                <label class="mdl-textfield__label" for="stateInput">State</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="street" [(ngModel)]="street">
+                <label class="mdl-textfield__label" for="streetInput">Street</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" name="zipcode" [(ngModel)]="zipcode">
+                <label class="mdl-textfield__label" for="zipcodeInput">Zipcode</label>
+            </div>
+            <div class="mdl-card__title">
+                <span class="mdl-card__subtitle-text">
+                    Set Password
+                </span>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="password" name="password" [(ngModel)]="password">
+                <label class="mdl-textfield__label" for="passwordInput">Password For User</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="password" name="passwordReEntry" [(ngModel)]="passwordReEntry">
+                <label class="mdl-textfield__label" for="passwordReEntry">Re-Enter Password</label>
+            </div>
+        </form>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Sign Up User
+            <i class="material-icons">person_add</i>
+        </div>
+    </div>
+</div>
