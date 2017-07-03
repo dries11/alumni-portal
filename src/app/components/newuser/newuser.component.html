@@ -22,12 +22,6 @@
                 <input class="mdl-textfield__input" type="email" name="email" [(ngModel)]="email">
                 <label class="mdl-textfield__label" for="emailInput">Email</label>
             </div>
-            <div>
-                <label for="adminSwitch" class="mdl-switch mdl-js-switch">
-                    <input type="checkbox" id="adminSwitch" class="mdl-switch__input">
-                    <span class="mdl-switch__label">Admin Yes/No</span>
-                </label>
-            </div>
             <div class="mdl-card__title">
                 <span class="mdl-card__subtitle-text">
                     Current Job
@@ -82,7 +76,7 @@
         </form>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-        <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <div class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="signupUser()">
             Sign Up User
             <i class="material-icons">person_add</i>
         </div>
