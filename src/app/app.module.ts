@@ -22,7 +22,9 @@ import { NewUserComponent } from './components/newuser/newuser.component';
 
 import { StudentService } from './services/student.service';
 import { AuthService } from './services/auth.service';
+import { DatabaseService } from './services/database.service';
 import { AuthGuard } from './services/activators/authguard';
+import { AdminGuard } from './services/activators/adminguard';
 import { firebaseConfig  } from '../assets/config';
 
 @NgModule({
@@ -46,7 +48,7 @@ import { firebaseConfig  } from '../assets/config';
     ReactiveFormsModule,
     TextMaskModule
   ],
-  providers: [StudentService, AuthService, AngularFireAuth, AuthGuard, AngularFireDatabase],
+  providers: [StudentService, AuthService, AngularFireAuth, AuthGuard, AdminGuard, AngularFireDatabase, DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

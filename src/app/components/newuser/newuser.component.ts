@@ -18,7 +18,7 @@ export class NewUserComponent {
     email: string;
     company: string;
     role: string;
-    admin: any = 0;
+    admin: any = false;
     city: string;
     country: string;
     state: string;

@@ -4,14 +4,17 @@
       <span class="mdl-layout-title">ZCW Alumni Portal</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="dashboard/update-profile/1">Update Profile Data</a>
+        <a class="mdl-navigation__link" routerLink='/dashboard/update-profile'>Update Profile Data</a>
+        <a class="mdl-navigation__link" routerLink='sign-up-user' *ngIf="isAdmin">Sign Up User</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Links</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="dashboard/update-profile/1">Update Profile Data</a>
+      <a class="mdl-navigation__link" routerLink='/dashboard'>Home</a>
+      <a class="mdl-navigation__link" routerLink='/dashboard/update-profile'>Update Profile Data</a>
+      <a class="mdl-navigation__link" routerLink='sign-up-user' *ngIf="isAdmin">Sign Up User</a>
       <a class="mdl-navigation__link" href="http://zipcodewilmington.com" target="_blank">ZCW Website</a>
       <a class="mdl-navigation__link" href="https://www.meetup.com/Zip-Code-Wilmington/" target="_blank">ZCW Meetup</a>
       <button id="logoutBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="logoutBtnClicked()">Logout</button>
@@ -20,8 +23,7 @@
   <main class="mdl-layout__content">
     <div class="page-content">
       <div class="mdl-grid">
-        <new-user class="mdl-shadow--4dp"></new-user>
-        <router-outlet></router-outlet>
+        <router-outlet class="mdl-shadow--4dp"></router-outlet>
       </div>
     </div>
   </main>

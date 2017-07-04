@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './services/activators/authguard';
+import { AdminGuard } from './services/activators/adminguard';
 import { LoginPage } from './pages/login/login.component';
 import { DashboardPage } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -15,8 +16,8 @@ const routes: Routes = [
         {path: 'forgot-password', component: ForgotPasswordComponent}
     ]},
     {path: 'dashboard', component: DashboardPage, canActivate: [AuthGuard], children: [
-        {path: 'update-profile/:id', component: ProfileComponent},
-        {path: 'new-user', component: NewUserComponent}
+        {path: 'update-profile', component: ProfileComponent},
+        {path: 'sign-up-user', component: NewUserComponent, canActivate: [AdminGuard]}
     ]}
 ];
 

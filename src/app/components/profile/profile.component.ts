@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Md5 } from 'ts-md5/dist/md5';
-import { StudentService } from '../../services/student.service';
+import { AuthService } from '../../services/auth.service';
+import { DatabaseService } from '../../services/database.service';
 
 @Component({
     selector: 'app-dashboard-profile',
@@ -10,21 +10,21 @@ import { StudentService } from '../../services/student.service';
 
 export class ProfileComponent implements OnInit {
 
-    @Input('profile') profile: any;
-    profileId: number;
-    profileHash: any;
+    user: any;
+    uid: any;
     sub: any;
 
-    constructor(private route: ActivatedRoute, private studentService: StudentService) {
-        this.sub = this.route.params.subscribe(params => {
-            this.profileId = params['id'];
-        });
+    constructor(private auth: AuthService, private databaseService: DatabaseService) {
     }
 
     ngOnInit() {
-    }
-
-    private generateEmailHash(input: string) {
-        this.profileHash = Md5.hashStr(input);
+        this.auth.getCurrentUserId().then(data => {
+            this.uid = data;
+        }).then(() => {
+            this.databaseService.getUserInfo(this.uid).then(data => {
+                this.user = data;
+                console.log(this.user);
+            });
+        });
     }
 }
